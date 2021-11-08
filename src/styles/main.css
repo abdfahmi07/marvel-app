@@ -1,0 +1,720 @@
+/* Import font quicksand and roboto condensed */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #ec1d24;
+  --secondary-color: #171717;
+  --greyish-color: #c4c4c4;
+  --half-black-color: #4b4b4b;
+  --half-white-color: #e8e8e8;
+  --greyish-icon: #222222;
+  --yellow-icon: #ffe600;
+  --full-white: #fff;
+  --full-black: #000;
+  --grey-movie-info: #595959;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: "Quicksand", sans-serif;
+}
+
+main {
+  height: 170rem;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+navbar-top .top-nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 120px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(33, 33, 33, 0.75) 30%,
+    rgba(33, 33, 33, 0)
+  );
+  z-index: 99;
+}
+
+.top-nav > a svg {
+  margin-right: 50px;
+}
+
+.top-nav ul {
+  display: flex;
+  flex: 1;
+  list-style: none;
+}
+
+.top-nav ul > li {
+  margin-right: 30px;
+}
+
+.top-nav ul > li a {
+  text-decoration: none;
+  padding-bottom: 5px;
+  color: var(--full-white);
+}
+
+.top-nav ul > li a.active {
+  font-weight: bold;
+}
+
+.search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input input {
+  width: 100%;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(255 255 255 / 70%);
+  font-weight: bold;
+  outline: none;
+}
+
+.search-input svg {
+  position: absolute;
+  color: var(--primary-color);
+  right: 0px;
+  margin-right: 10px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero-image::after {
+  content: "";
+  background-color: rgba(22, 22, 22, 0.45);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+.hero-description {
+  position: absolute;
+  top: 250px;
+  left: 120px;
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.hero-description h1 {
+  font-size: 42px;
+}
+
+.hero-description p {
+  margin: 15px 0px;
+  width: 500px;
+  font-size: 18px;
+}
+
+.hero .cta-button {
+  position: absolute;
+  bottom: 180px;
+  left: 120px;
+  display: flex;
+}
+
+.hero .cta-button a {
+  text-decoration: none;
+}
+
+.cta-button button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  display: flex;
+  margin-right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-button button:hover {
+  transform: translateY(-5px);
+}
+
+.cta-button .watch__trailer {
+  color: var(--full-white);
+  background-color: var(--primary-color);
+}
+
+.cta-button svg {
+  font-size: 21px;
+  margin-right: 10px;
+}
+
+.movie-rated {
+  position: absolute;
+  bottom: 38%;
+  right: 0;
+  background-color: rgba(49, 49, 49, 0.7);
+  padding: 10px 30px;
+  color: white;
+  border-right: 5px solid red;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.recommendation-movies__title h2 {
+  position: absolute;
+  bottom: 100px;
+  left: 120px;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.recommendation-list {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -150px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+recommendation-card {
+  width: 350px;
+  height: 235px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-right: 20px;
+  box-shadow: 0px 3px 7px 0px rgba(102, 102, 102, 0.6);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+recommendation-card:hover {
+  transform: translateY(-5px);
+}
+
+recommendation-card .card {
+  height: 100%;
+  position: relative;
+}
+
+recommendation-card .card::before {
+  content: " ";
+  width: 100%;
+  background-image: linear-gradient(
+    360deg,
+    rgb(14 14 14 / 90%) 0.9%,
+    transparent
+  );
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+recommendation-card .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+recommendation-card .movie-info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--full-white);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+recommendation-card .movie-info svg {
+  color: var(--yellow-icon);
+  margin-right: 5px;
+}
+
+recommendation-card .movie-info .rated {
+  width: 50px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--full-white);
+  border-radius: 30px;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+latest-movies-section,
+top-rated-movies-section,
+popular-tv-shows {
+  position: relative;
+}
+
+#latestMoviesSlider,
+#topRatedMoviesSlider,
+#popularTvShowsSlider {
+  position: absolute;
+  left: 120px;
+}
+
+#latestMoviesSlider {
+  top: 13rem;
+  margin-top: 20px;
+}
+
+header.title {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+hr {
+  width: 120px;
+  height: 3px;
+  background-color: black;
+}
+
+#latestMovieList,
+#topRatedMovieList,
+#popularTvShowsList {
+  display: flex;
+  width: 76.8rem;
+  overflow-x: hidden;
+}
+
+movie-card {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+movie-card .cover {
+  display: inline-block;
+  width: 240px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+movie-card .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+movie-card .desc {
+  width: 218px;
+  margin-top: 5px;
+}
+
+movie-card .desc p {
+  margin: 8px 0px;
+  font-weight: bold;
+  color: var(--half-black-color);
+}
+
+movie-card .info {
+  position: absolute;
+  bottom: 100px;
+  color: black;
+  display: flex;
+  font-weight: bold;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
+
+movie-card .info svg {
+  color: var(--yellow-icon);
+  margin-right: 5px;
+}
+
+movie-card .info span {
+  background-color: rgb(255, 255, 255, 0.9);
+  padding: 3px 10px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+movie-card .info .rated {
+  color: var(--primary-color);
+}
+
+.sticky {
+  position: fixed !important;
+}
+
+slider-button {
+  width: 100%;
+}
+
+.slider-button {
+  border: none;
+  position: absolute;
+  top: 39%;
+  color: var(--full-black);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.slider-previous {
+  left: 10px;
+}
+
+.slider-next {
+  right: 25px;
+}
+
+.slider-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.slider-button svg {
+  font-size: 25px;
+}
+
+movie-info-popup {
+  justify-content: center;
+}
+
+.popup-wrapper {
+  position: fixed;
+  top: 40px;
+  z-index: 999;
+  width: 55rem;
+  height: 90%;
+  background: white;
+  overflow-y: auto;
+  border-radius: 15px;
+  animation: popUp 0.3s ease-out;
+}
+
+.popup-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.popup-header {
+  position: absolute;
+  top: 46%;
+  left: 70px;
+  width: 370px;
+  color: var(--full-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popup-header h2 {
+  font-size: 38px;
+  font-family: "Roboto Condensed", sans-serif;
+  margin-bottom: 20px;
+}
+
+.popup-header .cta-button {
+  text-decoration: none;
+}
+
+.popup-wrapper picture::before {
+  content: "";
+  background-color: rgba(22, 22, 22, 0.4);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 495px;
+  display: block;
+}
+
+.popup-wrapper picture img {
+  width: 100%;
+}
+
+.popup-body {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 29px 45px;
+  width: 100%;
+  margin-bottom: 15px;
+  min-height: 295px;
+}
+
+.movie-info .desc {
+  width: 385px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie-info .desc h4:first-child {
+  border: 1px solid var(--primary-color);
+  padding: 3px 8px;
+  border-radius: 7px;
+}
+
+.movie-info p {
+  width: 500px;
+  line-height: 1.5;
+}
+
+.popup-body .cast {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--grey-movie-info);
+  padding: 10px 0px;
+}
+
+.popup-body .cast span {
+  color: var(--full-black);
+  line-height: 1.5;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(0 0 0 / 70%);
+  width: 100vw;
+  z-index: 99;
+}
+
+.close-popup {
+  position: absolute;
+  top: 15px;
+  background-color: var(--greyish-icon);
+  width: 35px;
+  height: 35px;
+  right: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.close-popup span {
+  width: 20px;
+  height: 1px;
+  background-color: var(--full-white);
+  position: absolute;
+  border-radius: 10px;
+}
+
+.close-popup span:first-child {
+  transform: rotate(45deg);
+}
+
+.close-popup span {
+  transform: rotate(-45deg);
+}
+
+.popup-body .coming-soon,
+.popup-body .no-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  border-radius: 20px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.popup-body .coming-soon {
+  font-size: 46px;
+}
+
+.popup-body .no-info {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+#topRatedMoviesSlider {
+  top: 46rem;
+  margin-top: 20px;
+}
+
+#popularTvShowsSlider {
+  top: 80rem;
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #171717;
+  height: 15rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+}
+
+footer h4 {
+  text-transform: uppercase;
+  font-size: 26px;
+  margin-bottom: 35px;
+}
+
+.footer-logo {
+  padding: 40px 20px;
+  width: 127px;
+}
+
+.footer-logo img {
+  width: 100%;
+}
+
+.follow-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 155px;
+}
+
+.follow-me .socmed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+}
+
+.socmed img {
+  width: 52%;
+  cursor: pointer;
+}
+
+.resource {
+  display: flex;
+  flex-direction: column;
+  height: 155px;
+}
+
+.resource-link {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.resource-link a {
+  color: var(--full-white);
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  height: 61px;
+  justify-content: space-evenly;
+}
+
+.copyright hr {
+  height: 1px;
+  border: none;
+  background-color: var(--full-white);
+}
+
+a.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+#searchResultWrapper {
+  width: 100%;
+  padding: 7rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-result__header {
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.search-result__header .close-popup {
+  position: inherit;
+}
+
+.nav-result {
+  background-color: rgba(12, 12, 12, 0.9);
+}
+
+.search-result-container {
+  flex-wrap: wrap;
+}
+
+.jc-fe {
+  justify-content: flex-end;
+}
+
+h3.error-message {
+  text-align: center;
+}
+
+.nav-scrolling {
+  background-color: var(--secondary-color);
+  animation: slideDown 0.3s linear;
+  background-image: none !important;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.6);
+  }
+  to {
+    transform: scale(1);
+  }
+}

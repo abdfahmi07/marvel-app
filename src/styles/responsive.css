@@ -1,0 +1,313 @@
+@media only screen and (max-width: 768px) {
+  .isDesktop {
+    display: none !important;
+  }
+
+  main {
+    height: auto;
+  }
+
+  navbar-top .top-nav {
+    padding: 10px 20px;
+    background-color: transparent;
+    background-image: none;
+    position: initial;
+  }
+
+  navbar-top .nav-scrolling {
+    background-color: rgb(2, 2, 2);
+  }
+
+  .top-nav a > svg {
+    width: 5rem;
+  }
+
+  .top-nav .search-input {
+    position: initial;
+  }
+
+  .search-input > input {
+    display: none;
+    color: white;
+    background-color: var(--full-black);
+    animation: searchAnimate 0.2s ease-out;
+  }
+
+  .search-input svg {
+    right: 20px;
+    font-size: 21px;
+  }
+
+  hero-section-mobile,
+  picture {
+    display: inline-block;
+  }
+
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+  }
+
+  .hero-wrapper picture {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 13rem;
+  }
+
+  .hero-wrapper picture::after {
+    content: "";
+    background-color: rgba(22, 22, 22, 0.45);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+  }
+
+  hero-section-mobile .hero-image {
+    border-radius: 7px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .hero-wrapper .cta-btn {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 10px 15px;
+    align-items: flex-end;
+  }
+
+  .hero-wrapper .cta-btn button:first-child {
+    font-size: 28px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    place-items: center;
+  }
+
+  .hero-wrapper .cta-btn button {
+    border: none;
+    font-size: 21px;
+    color: white;
+    background: transparent;
+  }
+
+  .hero-wrapper .cta-btn button:first-child > svg {
+    width: 100%;
+  }
+
+  hero-section-mobile .hero-description {
+    color: var(--full-black);
+    text-align: center;
+    margin-top: 12px;
+    position: initial;
+  }
+
+  hero-section-mobile .hero-description h1 {
+    font-size: 24px;
+  }
+
+  hero-section-mobile .hero-description p {
+    font-size: 14px;
+    margin: 15px 0px;
+    width: initial;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+  }
+
+  .isMobile .wrapper {
+    padding: 30px 20px;
+  }
+
+  .isMobile .header {
+    text-transform: uppercase;
+  }
+
+  .isMobile .header h3 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .isMobile hr {
+    height: 1px;
+  }
+
+  .isMobile .list-container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px 0px;
+  }
+
+  .isMobile .list-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .isMobile movie-card {
+    width: 164px;
+    height: 300px;
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+
+  .isMobile movie-card .cover {
+    height: 240px;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .isMobile movie-card .desc {
+    font-size: 14px;
+    width: 164px;
+  }
+
+  .isMobile movie-card .info {
+    bottom: 70px;
+    padding: 0px 8px;
+  }
+
+  .isMobile movie-card .info span {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+
+  #topMoviesWrapperMobile,
+  #tvShowsWrapperMobile {
+    padding-top: 0;
+  }
+
+  #tvShowsWrapperMobile {
+    margin-bottom: 80px;
+  }
+
+  .navbar-bottom {
+    width: 18rem;
+    height: 4.3rem;
+    background: white;
+    margin: 0 auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 25px;
+    border-radius: 40px;
+    padding: 0px 40px;
+  }
+  .navbar-bottom .list-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .navbar-bottom .list-menu button {
+    background: transparent;
+    border: none;
+  }
+
+  .navbar-bottom .list-menu button > svg {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  .navbar-bottom .list-menu .active {
+    color: var(--primary-color);
+  }
+
+  .navbar-bottom .list-menu .item > span {
+    display: none;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  .navbar-bottom .list-menu .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .isMobile .popup-wrapper {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 21rem;
+  }
+
+  .isMobile .popup-wrapper picture::before {
+    height: 190px;
+  }
+
+  .isMobile .popup-wrapper picture a img {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100px;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .isMobile .popup-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    margin-bottom: 0;
+  }
+
+  .isMobile h2.movie-title {
+    font-size: 18px;
+  }
+
+  .isMobile .movie-detail .info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+    margin: 15px 0px;
+  }
+
+  .isMobile .movie-detail .info h4:first-child {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-right: 10px;
+  }
+
+  .isMobile .movie-detail .overview {
+    line-height: 1.4;
+  }
+
+  .isMobile .movie-detail p {
+    margin-bottom: 15px;
+  }
+
+  .isMobile img.coming-soon {
+    width: 200px;
+    margin: 50px auto;
+    border: none;
+  }
+
+  @keyframes searchAnimate {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 962px) {
+  .isMobile {
+    display: none;
+  }
+}
